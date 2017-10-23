@@ -11,20 +11,21 @@ module.exports.disableAllMethods = function disableAllMethods(model, methodsToEx
 
         try
         {
+            relationMethods.push({ name: 'prototype.patchAttributes' });
             Object.keys(model.definition.settings.relations).forEach(function(relation)
             {
-                relationMethods.push({ name: '__findById__' + relation, isStatic: false });
-                relationMethods.push({ name: '__destroyById__' + relation, isStatic: false });
-                relationMethods.push({ name: '__updateById__' + relation, isStatic: false });
-                relationMethods.push({ name: '__exists__' + relation, isStatic: false });
-                relationMethods.push({ name: '__link__' + relation, isStatic: false });
-                relationMethods.push({ name: '__get__' + relation, isStatic: false });
-                relationMethods.push({ name: '__create__' + relation, isStatic: false });
-                relationMethods.push({ name: '__update__' + relation, isStatic: false });
-                relationMethods.push({ name: '__destroy__' + relation, isStatic: false });
-                relationMethods.push({ name: '__unlink__' + relation, isStatic: false });
-                relationMethods.push({ name: '__count__' + relation, isStatic: false });
-                relationMethods.push({ name: '__delete__' + relation, isStatic: false });
+                relationMethods.push({ name: 'prototype.__findById__' + relation });
+                relationMethods.push({ name: 'prototype.__destroyById__' + relation });
+                relationMethods.push({ name: 'prototype.__updateById__' + relation });
+                relationMethods.push({ name: 'prototype.__exists__' + relation });
+                relationMethods.push({ name: 'prototype.__link__' + relation });
+                relationMethods.push({ name: 'prototype.__get__' + relation });
+                relationMethods.push({ name: 'prototype.__create__' + relation });
+                relationMethods.push({ name: 'prototype.__update__' + relation });
+                relationMethods.push({ name: 'prototype.__destroy__' + relation });
+                relationMethods.push({ name: 'prototype.__unlink__' + relation });
+                relationMethods.push({ name: 'prototype.__count__' + relation });
+                relationMethods.push({ name: 'prototype.__delete__' + relation });
             });
         } catch(err) {}
 
