@@ -20,6 +20,7 @@
     "loopback-connector-mongodb": "^3.3.0",
     "mosca": "^2.6.0",
     "serve-favicon": "^2.0.1",
+    "socket.io": "^2.0.4",
     "strong-error-handler": "^2.0.0"
   },
   "devDependencies": {

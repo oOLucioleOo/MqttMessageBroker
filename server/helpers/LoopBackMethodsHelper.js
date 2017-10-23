@@ -34,13 +34,13 @@ module.exports.disableAllMethods = function disableAllMethods(model, methodsToEx
             if(methodsToExpose.indexOf(methodName) < 0)
             {
                 hiddenMethods.push(methodName);
-                model.disableRemoteMethod(methodName, method.isStatic);
+                model.disableRemoteMethodByName(method.name);
             }
         });
 
-        if(hiddenMethods.length > 0)
-        {
-            console.log('\nRemote mehtods hidden for', modelName, ':', hiddenMethods.join(', '), '\n');
-        }
+        // if(hiddenMethods.length > 0)
+        // {
+        //     console.log('\nRemote mehtods hidden for', modelName, ':', hiddenMethods.join(', '), '\n');
+        // }
     }
 };

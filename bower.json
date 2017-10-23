@@ -1,0 +1,23 @@
+{
+  "name": "MqttBroker",
+  "description": "MqttBroker",
+  "main": "server/server.js",
+  "authors": [
+    "Anael <anael.lefebvre@viacesi.fr>"
+  ],
+  "license": "UNLICENSED",
+  "homepage": "https://github.com/oOLucioleOo/MqttMessageBroker",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "client/vendor",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "angular-resource": "^1.6.6",
+    "angular-ui-router": "^1.0.10",
+    "bootstrap": "^3.3.7"
+  }
+}
