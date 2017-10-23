@@ -17,18 +17,18 @@ module.exports = function(app) {
   });
   // fired when a client disconnects
   server.on('clientDisconnected', function(client) {
-    // app.models.client.destroyAll({objectId :client.id});
+    app.models.client.destroyAll({objectId :client.id});
     
     console.log('Client Disconnected:', client.id);
   });
   // fired when a message is received
   server.on('published', function(packet, client) {
-    console.log('packet', packet);
+    // console.log('packet', packet);
     if (client){
       var isConnected = app.models.client.find({where: {objectId: client.id}},
         (err, results) => {
           if(!err && results){
-            console.log('results', results);
+            // console.log('results', results);
             app.models.topic.findOrCreate({where: {name: packet.topic}}, {name: packet.topic},
             (err, instance, created) => {
               if(!err){

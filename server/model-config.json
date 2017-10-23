@@ -23,6 +23,6 @@
   },
   "message": {
     "dataSource": "mongo",
-    "public": true
+    "public": false
   }
 }
