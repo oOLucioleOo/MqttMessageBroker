@@ -27,10 +27,10 @@ boot(app, __dirname, function(err) {
   if (require.main === module)
     // app.start();
     app.io = require('socket.io')(app.start());
-    app.io.on('connection', function(socket){
+    // app.io.on('connection', function(socket){
       
-      // socket.on('disconnect', function(){
-      //     console.log('client disconnected');
-      // });
-    });
+    //   // socket.on('disconnect', function(){
+    //   //     console.log('client disconnected');
+    //   // });
+    // });
 });

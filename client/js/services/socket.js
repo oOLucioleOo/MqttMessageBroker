@@ -6,7 +6,10 @@ angular.module('app').factory('socket', function(){
   return {
       onClientListUpdated : function(callback){
         socket.on('Client', callback);
-      }
+      },
+      onMessageListUpdated : function(callback){
+        socket.on('Message', callback);
+      },
   };
 
 });

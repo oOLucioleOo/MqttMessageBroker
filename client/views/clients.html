@@ -1,5 +1,16 @@
 <h1>Client list</h1>
 <hr>
-<div ng-repeat="client in ctrl.clients">
-    <h5>{{client.objectId}}</h5>
+<div class="col-sm-4 col-md-8">
+    <select ng-model="ctrl.currentTopic" ng-change="ctrl.loadMessages()">
+            <option ng-repeat="topic in ctrl.listTopics" 
+                value="{{topic.id}}">
+                {{topic.name}}
+            </option>
+    </select>
+    <article ng-repeat="message in ctrl.messages">
+            <p>{{message.text}}</p>
+    </article>
+</div>
+<div class="col-sm-4 col-md-2" >
+    <h5 ng-repeat="client in ctrl.clients">{{client.objectId}}</h5>
 </div>
